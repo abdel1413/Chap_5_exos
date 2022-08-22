@@ -22,7 +22,6 @@ function codeToChar(code) {
         return code >= from && code < to;
       })
     ) {
-      console.log(script);
       return script;
     }
   }
@@ -43,7 +42,8 @@ function dominantDirection(text) {
   if (counted.length === 0) {
     return "ltr";
   }
-  return counted.reduce((a, b) => (a.count > b.count ? a : b)).name;
+  return counted.reduce((a, b) => (a.count > b.count ? a : b)).names;
 }
 
-console.log(dominantDirection("hello"));
+console.log(dominantDirection("hello")); // => ltr
+console.log(dominantDirection("Hey, مساء الخير")); //=> rtl
